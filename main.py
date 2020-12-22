@@ -13,6 +13,9 @@ def match(x):
 def fill(x):
     x=str(x)+(" "*(3-len(str(x))))
     return x
+def filll(x):
+    x=str(x)+(" "*(18-len(str(x))))
+    return x
 def dice(x):
     y=""
     z=""
@@ -47,8 +50,8 @@ def roll():
         dice(x)
     return x
 def turn(p):
-    input("Player "+str(p)+"'s turn!")
-    print("┌────────────┬─────┐\n│ Catagories │Score│\n├────────────┼─────┤\n│  Ones      │"+fill(data[p-1][0])," │\n│  Twos      │"+fill(data[p-1][1])," │\n│  Threes    │"+fill(data[p-1][2])," │\n│  Fours     │"+fill(data[p-1][3])," │\n│  Fives     │"+fill(data[p-1][4])," │\n│  Sixes     │"+fill(data[p-1][5])," │\n│  Subtotal  │"+fill(data[p-1][6])," │\n│  Bonus     │"+fill(data[p-1][7])," │\n│  Top Total │"+fill(data[p-1][8])," │\n├────────────┼─────┤\n│3 of a kind │"+fill(data[p-1][9])," │\n│4 of a kind │"+fill(data[p-1][10])," │\n│Full House  │"+fill(data[p-1][11])," │\n│SM Straight │"+fill(data[p-1][12])," │\n│LG Straight │"+fill(data[p-1][13])," │\n│Yahtzee     │"+fill(data[p-1][14])," │\n│Chance      │"+fill(data[p-1][15])," │\n│Bottom Total│"+fill(data[p-1][16])," │\n├────────────┼─────┤\n│Grand Total │"+fill(data[p-1][17])," │\n└────────────┴─────┘")
+    input("Player "+data[p-1][18]+"'s turn!")
+    print("┌──────────────────┐\n│"+filll(data[p-1][18])+"│\n├────────────┬─────┤\n│ Catagories │Score│\n├────────────┼─────┤\n│  Ones      │"+fill(data[p-1][0])," │\n│  Twos      │"+fill(data[p-1][1])," │\n│  Threes    │"+fill(data[p-1][2])," │\n│  Fours     │"+fill(data[p-1][3])," │\n│  Fives     │"+fill(data[p-1][4])," │\n│  Sixes     │"+fill(data[p-1][5])," │\n│  Subtotal  │"+fill(data[p-1][6])," │\n│  Bonus     │"+fill(data[p-1][7])," │\n│  Top Total │"+fill(data[p-1][8])," │\n├────────────┼─────┤\n│3 of a kind │"+fill(data[p-1][9])," │\n│4 of a kind │"+fill(data[p-1][10])," │\n│Full House  │"+fill(data[p-1][11])," │\n│SM Straight │"+fill(data[p-1][12])," │\n│LG Straight │"+fill(data[p-1][13])," │\n│Yahtzee     │"+fill(data[p-1][14])," │\n│Chance      │"+fill(data[p-1][15])," │\n│Bottom Total│"+fill(data[p-1][16])," │\n├────────────┼─────┤\n│Grand Total │"+fill(data[p-1][17])," │\n└────────────┴─────┘")
     x=roll()
     y=match(x)
     u=0
@@ -74,7 +77,7 @@ def turn(p):
             else: u=False
         else: u=False
     else: u=False
-    imp=19
+    imp=20
     while data[p-1][imp-1]!="":
         inp=int(input("Input 1-6 to go for a number, 7 for 3 of a kind , 8 for 4 of a kind , 9 for Full House , 10 for a SM Straight , 11 for a LG Straight , 12 for a Yahtzee, or 13 for Chance. "))
         imp=inp
@@ -97,13 +100,15 @@ def turn(p):
         data[p-1][8]=data[p-1][6]+data[p-1][7]
     if data[p-1][9]!="" and data[p-1][10]!="" and data[p-1][11]!="" and data[p-1][12]!="" and data[p-1][13]!="" and data[p-1][14]!="" and data[p-1][15]: data[p-1][16]=int(data[p-1][9])+int(data[p-1][10])+int(data[p-1][11])+int(data[p-1][12])+int(data[p-1][13])+int(data[p-1][14])+int(data[p-1][15])
     if data[p-1][8]!="" and data[p-1][16]!="": data[p-1][17]=int(data[p-1][8])+int(data[p-1][16]) 
-    print("┌────────────┬─────┐\n│ Catagories │Score│\n├────────────┼─────┤\n│  Ones      │"+fill(data[p-1][0])," │\n│  Twos      │"+fill(data[p-1][1])," │\n│  Threes    │"+fill(data[p-1][2])," │\n│  Fours     │"+fill(data[p-1][3])," │\n│  Fives     │"+fill(data[p-1][4])," │\n│  Sixes     │"+fill(data[p-1][5])," │\n│  Subtotal  │"+fill(data[p-1][6])," │\n│  Bonus     │"+fill(data[p-1][7])," │\n│  Top Total │"+fill(data[p-1][8])," │\n├────────────┼─────┤\n│3 of a kind │"+fill(data[p-1][9])," │\n│4 of a kind │"+fill(data[p-1][10])," │\n│Full House  │"+fill(data[p-1][11])," │\n│SM Straight │"+fill(data[p-1][12])," │\n│LG Straight │"+fill(data[p-1][13])," │\n│Yahtzee     │"+fill(data[p-1][14])," │\n│Chance      │"+fill(data[p-1][15])," │\n│Bottom Total│"+fill(data[p-1][16])," │\n├────────────┼─────┤\n│Grand Total │"+fill(data[p-1][17])," │\n└────────────┴─────┘")
+    print("┌──────────────────┐\n│"+filll(data[p-1][18])+"│\n├────────────┬─────┤\n│ Catagories │Score│\n├────────────┼─────┤\n│  Ones      │"+fill(data[p-1][0])," │\n│  Twos      │"+fill(data[p-1][1])," │\n│  Threes    │"+fill(data[p-1][2])," │\n│  Fours     │"+fill(data[p-1][3])," │\n│  Fives     │"+fill(data[p-1][4])," │\n│  Sixes     │"+fill(data[p-1][5])," │\n│  Subtotal  │"+fill(data[p-1][6])," │\n│  Bonus     │"+fill(data[p-1][7])," │\n│  Top Total │"+fill(data[p-1][8])," │\n├────────────┼─────┤\n│3 of a kind │"+fill(data[p-1][9])," │\n│4 of a kind │"+fill(data[p-1][10])," │\n│Full House  │"+fill(data[p-1][11])," │\n│SM Straight │"+fill(data[p-1][12])," │\n│LG Straight │"+fill(data[p-1][13])," │\n│Yahtzee     │"+fill(data[p-1][14])," │\n│Chance      │"+fill(data[p-1][15])," │\n│Bottom Total│"+fill(data[p-1][16])," │\n├────────────┼─────┤\n│Grand Total │"+fill(data[p-1][17])," │\n└────────────┴─────┘")
 #┌───────┐
 #│ • • • │
 #│ • • • │
 #│ • • • │
 #└───────┘
-#┌────────────┬─────┐
+#┌──────────────────┐
+#│Player 1          │
+#├────────────┬─────┤
 #│ Catagories │Score│
 #├────────────┼─────┤
 #│  Ones      │2    │
@@ -130,7 +135,9 @@ def turn(p):
 p=int(input("How many players are there? "))
 data=list(" "*p)
 x=0
-for i in range(p): data[i]=["","","","","","","","","","","","","","","","","","",1]
+for i in range(p): 
+    name=input("Player "+str(p)+"'s name? ")
+    data[i]=["","","","","","","","","","","","","","","","","","",name,1]
 for i in range(13):
     for i in range(p):
         turn(i+1)
@@ -138,5 +145,5 @@ for i in range(p):
     if data[i][17]>x:
         x=data[i][17]
         y=i+1
-    print("┌────────────┬─────┐\n│ Catagories │Score│\n├────────────┼─────┤\n│  Ones      │"+fill(data[p-1][0])," │\n│  Twos      │"+fill(data[p-1][1])," │\n│  Threes    │"+fill(data[p-1][2])," │\n│  Fours     │"+fill(data[p-1][3])," │\n│  Fives     │"+fill(data[p-1][4])," │\n│  Sixes     │"+fill(data[p-1][5])," │\n│  Subtotal  │"+fill(data[p-1][6])," │\n│  Bonus     │"+fill(data[p-1][7])," │\n│  Top Total │"+fill(data[p-1][8])," │\n├────────────┼─────┤\n│3 of a kind │"+fill(data[p-1][9])," │\n│4 of a kind │"+fill(data[p-1][10])," │\n│Full House  │"+fill(data[p-1][11])," │\n│SM Straight │"+fill(data[p-1][12])," │\n│LG Straight │"+fill(data[p-1][13])," │\n│Yahtzee     │"+fill(data[p-1][14])," │\n│Chance      │"+fill(data[p-1][15])," │\n│Bottom Total│"+fill(data[p-1][16])," │\n├────────────┼─────┤\n│Grand Total │"+fill(data[p-1][17])," │\n└────────────┴─────┘")
-print("Player",y,"won with",x,"points!")
+    print("┌──────────────────┐\n│"+filll(data[p-1][18])+"│\n├────────────┬─────┤\n│ Catagories │Score│\n├────────────┼─────┤\n│  Ones      │"+fill(data[p-1][0])," │\n│  Twos      │"+fill(data[p-1][1])," │\n│  Threes    │"+fill(data[p-1][2])," │\n│  Fours     │"+fill(data[p-1][3])," │\n│  Fives     │"+fill(data[p-1][4])," │\n│  Sixes     │"+fill(data[p-1][5])," │\n│  Subtotal  │"+fill(data[p-1][6])," │\n│  Bonus     │"+fill(data[p-1][7])," │\n│  Top Total │"+fill(data[p-1][8])," │\n├────────────┼─────┤\n│3 of a kind │"+fill(data[p-1][9])," │\n│4 of a kind │"+fill(data[p-1][10])," │\n│Full House  │"+fill(data[p-1][11])," │\n│SM Straight │"+fill(data[p-1][12])," │\n│LG Straight │"+fill(data[p-1][13])," │\n│Yahtzee     │"+fill(data[p-1][14])," │\n│Chance      │"+fill(data[p-1][15])," │\n│Bottom Total│"+fill(data[p-1][16])," │\n├────────────┼─────┤\n│Grand Total │"+fill(data[p-1][17])," │\n└────────────┴─────┘")
+print("Player",data[y-1][18],"won with",x,"points!")
