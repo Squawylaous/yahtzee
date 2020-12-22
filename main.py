@@ -50,6 +50,7 @@ def roll():
         dice(x)
     return x
 def turn(p):
+    global data
     input("Player "+data[p-1][18]+"'s turn!")
     print("┌──────────────────┐\n│"+filll(data[p-1][18])+"│\n├────────────┬─────┤\n│ Catagories │Score│\n├────────────┼─────┤\n│  Ones      │"+fill(data[p-1][0])," │\n│  Twos      │"+fill(data[p-1][1])," │\n│  Threes    │"+fill(data[p-1][2])," │\n│  Fours     │"+fill(data[p-1][3])," │\n│  Fives     │"+fill(data[p-1][4])," │\n│  Sixes     │"+fill(data[p-1][5])," │\n│  Subtotal  │"+fill(data[p-1][6])," │\n│  Bonus     │"+fill(data[p-1][7])," │\n│  Top Total │"+fill(data[p-1][8])," │\n├────────────┼─────┤\n│3 of a kind │"+fill(data[p-1][9])," │\n│4 of a kind │"+fill(data[p-1][10])," │\n│Full House  │"+fill(data[p-1][11])," │\n│SM Straight │"+fill(data[p-1][12])," │\n│LG Straight │"+fill(data[p-1][13])," │\n│Yahtzee     │"+fill(data[p-1][14])," │\n│Chance      │"+fill(data[p-1][15])," │\n│Bottom Total│"+fill(data[p-1][16])," │\n├────────────┼─────┤\n│Grand Total │"+fill(data[p-1][17])," │\n└────────────┴─────┘")
     x=roll()
@@ -138,12 +139,11 @@ x=0
 for i in range(p): 
     name=input("Player "+str(p)+"'s name? ")
     data[i]=["","","","","","","","","","","","","","","","","","",name,1]
-for i in range(13):
-    for i in range(p):
-        turn(i+1)
-for i in range(p):
-    if data[i][17]>x:
-        x=data[i][17]
-        y=i+1
+for ii in range(13):
+    for i in range(p): turn(i+1)
+for p in range(1,p+1):
+    if data[p-1][17]>x:
+        x=data[p-1][17]
+        y=p
     print("┌──────────────────┐\n│"+filll(data[p-1][18])+"│\n├────────────┬─────┤\n│ Catagories │Score│\n├────────────┼─────┤\n│  Ones      │"+fill(data[p-1][0])," │\n│  Twos      │"+fill(data[p-1][1])," │\n│  Threes    │"+fill(data[p-1][2])," │\n│  Fours     │"+fill(data[p-1][3])," │\n│  Fives     │"+fill(data[p-1][4])," │\n│  Sixes     │"+fill(data[p-1][5])," │\n│  Subtotal  │"+fill(data[p-1][6])," │\n│  Bonus     │"+fill(data[p-1][7])," │\n│  Top Total │"+fill(data[p-1][8])," │\n├────────────┼─────┤\n│3 of a kind │"+fill(data[p-1][9])," │\n│4 of a kind │"+fill(data[p-1][10])," │\n│Full House  │"+fill(data[p-1][11])," │\n│SM Straight │"+fill(data[p-1][12])," │\n│LG Straight │"+fill(data[p-1][13])," │\n│Yahtzee     │"+fill(data[p-1][14])," │\n│Chance      │"+fill(data[p-1][15])," │\n│Bottom Total│"+fill(data[p-1][16])," │\n├────────────┼─────┤\n│Grand Total │"+fill(data[p-1][17])," │\n└────────────┴─────┘")
 print("Player",data[y-1][18],"won with",x,"points!")
